@@ -424,6 +424,7 @@ content {
 .hearo .container .inner {
   gap: 40px;
   display: flex;
+  width: min(100% - 24px, 1100px);
 }
 .hearo .container .inner .title {
   font-size: 60px;
