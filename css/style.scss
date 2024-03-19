@@ -11,12 +11,12 @@ $BigShadow: 0 16px 32px 0 #071c1f1a;
 @font-face {
   font-family: fontRegular;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-R.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Normal.otf);
 }
 @font-face {
   font-family: fontBold;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-B.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Bold.otf);
 }
 * {
   font-family: "fontRegular", sans-serif;
@@ -351,7 +351,7 @@ content {
     display: flex;
     align-items: center;
     gap: 24px;
-    width: min(100% - 24px, 1320px);
+    width: min(100% - 24px, 950px);
     margin: auto;
     padding: 24px 0;
     justify-content: space-around;
@@ -398,15 +398,16 @@ content {
     position: relative;
     z-index: 3;
     flex: 1;
-    padding: 40px 0;
+    padding: 80px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     .inner {
       gap: 40px;
       display: flex;
-      width: min(100% - 24px, 1100px);
-
+      flex: 1;
+      max-width: 950px;
+      width: calc(100% - 24px);
       .title {
         font-size: 60px;
         font-family: "fontBold";
@@ -421,7 +422,6 @@ content {
         @media screen and (max-width: 768px) {
           font-size: 40px;
           line-height: normal;
-
         }
       }
       .line {
@@ -433,12 +433,12 @@ content {
       .subTitle {
         display: flex;
         align-items: center;
+        font-size: 18px;
         @media screen and (max-width: 768px) {
-          font-size: 22px;
+          font-size: 14px;
         }
       }
-
-      @media screen and (max-width:768px) {
+      @media screen and (max-width: 768px) {
         flex-direction: column;
         text-align: center;
         padding: 20px;
@@ -502,8 +502,7 @@ content {
     }
   }
 }
-
-.about {
+.Beneficiaries {
   background-color: #1d2739;
   padding: 80px 0;
   .container {
@@ -511,9 +510,11 @@ content {
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
+    flex: 1;
+    max-width: 950px;
+    width: calc(100% - 24px);
     @media screen and (max-width: 768px) {
-      padding: 24px;
-      text-align: center;
+      padding: 0px;
     }
     .title {
       font-size: 50px;
@@ -523,28 +524,65 @@ content {
       color: $mainColor;
       flex: 2;
       min-width: 250px;
+      text-transform: uppercase;
       @media screen and (max-width: 768px) {
         font-size: 40px;
-        justify-content: start;
       }
     }
-    .sub {
-      font-size: 36px;
-      flex: 3;
-      min-width: 250px;
+    .Beneficiary {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 30px;
+      padding-top: 160px;
+      background-image: url(../img/Beneficiary1.png);
+      background-size: cover;
       color: $whiteColor;
+      gap: 16px;
       @media screen and (max-width: 768px) {
-        font-size: 20px;
+        padding: 20px;
+        padding-top: 120px;
+      }
+      .mainTitle {
+        font-size: 40px;
+        font-family: "fontBold";
+        font-weight: bold;
+        line-height: 40px;
+        span {
+          font-family: "fontBold";
+          font-weight: bold;
+          display: block;
+          color: $mainColor;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+      .secondTitle {
+        display: flex;
+        font-size: 18px;
+        min-height: 90px;
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      .line {
+        height: 2px;
+        width: 70%;
+        border-radius: 8px;
+        background-color: $mainColor;
+        display: block;
       }
     }
   }
 }
-
 .sectors {
   padding: 80px 0;
   background-color: $whiteColor;
   .container {
-    width: min(100% - 24px, 1000px);
+    width: min(100% - 24px, 950px);
   }
   .title {
     font-size: 50px;
@@ -552,6 +590,7 @@ content {
     text-align: center;
     color: #1d2739;
     margin-bottom: 24px;
+    text-transform: uppercase;
     span {
       color: $mainColor;
       font-family: "fontBold";
@@ -560,26 +599,50 @@ content {
       font-size: 30px;
     }
   }
-  .singleSector {
-    padding: 40px;
+  .sectorsRow {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 2/1;
-   
-    color: $whiteColor;
-    background-size: cover;
-    @media screen and (max-width: 768px) {
-    
-    text-align: center;
-  }
-    .name {
-      font-family: "fontBold";
-      font-weight: bold;
+    justify-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .singleSector {
+      flex: 1 calc(50% - 16px);
+      min-width: 300px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      color: $whiteColor;
+      background-size: cover;
+      gap: 12px;
+      background-color: $mainColor;
+      // &:nth-child(1 + 2n) {
+      //   background-color: #2e3c55;
+      // }
+      &:nth-child(3n + 1) {
+        background-color: #2e3c55;
+      }
+      &:nth-child(4n + 1) {
+        background-color: #2e3c55;
+      }
+      .name {
+        font-family: "fontBold";
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: capitalize;
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: $whiteColor;
+        display: block;
+      }
     }
   }
 }
-
 .RSVP {
   padding: 80px 0;
   background: url(../img/footerBG.png);
@@ -595,11 +658,9 @@ content {
     border-radius: 100px;
     color: $whiteColor;
   }
-
   .container {
     width: min(100% - 24px, 1000px);
   }
-
   form {
     padding: 48px 32px;
     border-radius: 8px;
@@ -613,8 +674,6 @@ content {
     .form-group {
       display: flex;
       width: 100%;
-
-
       @media (max-width: 768px) {
         flex-direction: column;
         gap: 48px;
@@ -687,15 +746,13 @@ content {
           }
         }
       }
-      &:nth-child(even){
+      &:nth-child(even) {
         label {
-       
           color: $whiteColor !important;
         }
       }
     }
   }
-
   .title {
     font-size: 50px;
     font-family: "fontBold";
@@ -718,18 +775,76 @@ content {
     margin: auto;
   }
 }
-
 /* For Chrome, Safari, and newer versions of Edge */
 input:-webkit-autofill {
   background-color: transparent; /* Change to desired color */
   /* Additional styling */
   color: #333;
 }
-
 /* For Firefox */
 input:-moz-autofill {
   background-color: transparent; /* Change to desired color */
   /* Additional styling */
   border: 1px solid #ccc;
   color: #333;
+}
+.benefits {
+  background-color: #1d2739;
+  padding: 80px 0;
+  .container {
+    width: min(100% - 24px, 1100px);
+  }
+  .title {
+    font-size: 50px;
+    font-family: "fontBold";
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: $whiteColor;
+    span {
+      font-family: "fontBold";
+      color: $mainColor;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  .benefitRow {
+    display: flex;
+    justify-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .benefit {
+      flex: 1 calc(33% - 16px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      min-width: 300px;
+      border-right: 1px solid $mainColor;
+      &:nth-child(3n) {
+        border: none ;
+      }
+      color: $whiteColor;
+      background-size: cover;
+      @media screen and (max-width: 768px) {
+        border-right: none;
+        border-bottom: 1px solid $mainColor;
+
+      }
+      .des {
+        text-align: center;
+      }
+      .icon {
+        width: 64px;
+        height: 64px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
 }

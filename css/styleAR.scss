@@ -406,7 +406,7 @@ content {
       gap: 40px;
       display: flex;
       width: min(100% - 24px, 1100px);
-
+      flex: 1;
       .title {
         font-size: 60px;
         font-family: "fontBold";
@@ -421,7 +421,6 @@ content {
         @media screen and (max-width: 768px) {
           font-size: 40px;
           line-height: normal;
-
         }
       }
       .line {
@@ -438,7 +437,7 @@ content {
         }
       }
 
-      @media screen and (max-width:768px) {
+      @media screen and (max-width: 768px) {
         flex-direction: column;
         text-align: center;
         padding: 20px;
@@ -566,13 +565,12 @@ content {
     justify-content: center;
     align-items: center;
     aspect-ratio: 2/1;
-   
+
     color: $whiteColor;
     background-size: cover;
     @media screen and (max-width: 768px) {
-    
-    text-align: center;
-  }
+      text-align: center;
+    }
     .name {
       font-family: "fontBold";
       font-weight: bold;
@@ -613,7 +611,6 @@ content {
     .form-group {
       display: flex;
       width: 100%;
-
 
       @media (max-width: 768px) {
         flex-direction: column;
@@ -687,9 +684,8 @@ content {
           }
         }
       }
-      &:nth-child(even){
+      &:nth-child(even) {
         label {
-       
           color: $whiteColor !important;
         }
       }
