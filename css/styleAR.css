@@ -2,12 +2,12 @@
 @font-face {
   font-family: fontRegular;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-R.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Normal.otf);
 }
 @font-face {
   font-family: fontBold;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-B.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Bold.otf);
 }
 * {
   font-family: "fontRegular", sans-serif;
@@ -215,7 +215,7 @@ button {
 .preloader .preloaderImg::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   width: 250px;
   height: 250px;
@@ -252,7 +252,7 @@ button {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -261,8 +261,8 @@ button {
   transform: translateX(0%);
 }
 .lazyDiv.oppositeDir::after {
-  right: unset;
   left: 0;
+  right: unset;
 }
 .lazyDiv .lazy {
   position: relative;
@@ -270,10 +270,10 @@ button {
   width: 100%;
 }
 .lazyDiv.loaded::after {
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 .lazyDiv.loaded.oppositeDir::after {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 .lazyDiv.loaded.down::after {
   transform: translateY(100%);
@@ -303,7 +303,7 @@ content {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
-  background-position: top left;
+  background-position: top right;
   background-image: url(../img/body-bg.png);
 }
 
@@ -376,7 +376,7 @@ content {
   display: flex;
   align-items: center;
   gap: 24px;
-  width: min(100% - 24px, 1320px);
+  width: min(100% - 24px, 950px);
   margin: auto;
   padding: 24px 0;
   justify-content: space-around;
@@ -392,7 +392,7 @@ content {
 }
 .hearo .hearoBG {
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   width: 100%;
   height: 100%;
@@ -404,7 +404,7 @@ content {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   background-color: #000;
   opacity: 0.4;
@@ -426,7 +426,7 @@ content {
   position: relative;
   z-index: 3;
   flex: 1;
-  padding: 40px 0;
+  padding: 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,8 +434,9 @@ content {
 .hearo .container .inner {
   gap: 40px;
   display: flex;
-  width: min(100% - 24px, 1100px);
   flex: 1;
+  max-width: 950px;
+  width: calc(100% - 24px);
 }
 .hearo .container .inner .title {
   font-size: 60px;
@@ -464,10 +465,11 @@ content {
 .hearo .container .inner .subTitle {
   display: flex;
   align-items: center;
+  font-size: 18px;
 }
 @media screen and (max-width: 768px) {
   .hearo .container .inner .subTitle {
-    font-size: 22px;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -517,43 +519,45 @@ content {
   border-radius: 50%;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 50%;
+  transform: translateX(50%);
   animation: scrollDown linear 2s infinite;
   transition: 0.3s ease-in-out;
 }
 @keyframes scrollDown {
   0% {
-    transform: translate(-50%, 0px);
+    transform: translate(50%, 0px);
     opacity: 0;
   }
   50% {
-    transform: translate(-50%, 16px);
+    transform: translate(50%, 16px);
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, 32px);
+    transform: translate(50%, 32px);
     opacity: 0;
   }
 }
 
-.about {
+.Beneficiaries {
   background-color: #1d2739;
   padding: 80px 0;
 }
-.about .container {
+.Beneficiaries .container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
+  flex: 1;
+  max-width: 950px;
+  width: calc(100% - 24px);
 }
 @media screen and (max-width: 768px) {
-  .about .container {
-    padding: 24px;
-    text-align: center;
+  .Beneficiaries .container {
+    padding: 0px;
   }
 }
-.about .container .title {
+.Beneficiaries .container .title {
   font-size: 50px;
   display: flex;
   justify-content: center;
@@ -561,23 +565,65 @@ content {
   color: #d77673;
   flex: 2;
   min-width: 250px;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 768px) {
-  .about .container .title {
+  .Beneficiaries .container .title {
     font-size: 40px;
-    justify-content: start;
   }
 }
-.about .container .sub {
-  font-size: 36px;
-  flex: 3;
-  min-width: 250px;
+.Beneficiaries .container .Beneficiary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 30px;
+  padding-top: 160px;
+  background-image: url(../img/Beneficiary1.png);
+  background-size: cover;
   color: #ffffff;
+  gap: 16px;
 }
 @media screen and (max-width: 768px) {
-  .about .container .sub {
-    font-size: 20px;
+  .Beneficiaries .container .Beneficiary {
+    padding: 20px;
+    padding-top: 120px;
   }
+}
+.Beneficiaries .container .Beneficiary .mainTitle {
+  font-size: 40px;
+  font-family: "fontBold";
+  font-weight: bold;
+  line-height: 40px;
+}
+.Beneficiaries .container .Beneficiary .mainTitle span {
+  font-family: "fontBold";
+  font-weight: bold;
+  display: block;
+  color: #d77673;
+}
+@media screen and (max-width: 768px) {
+  .Beneficiaries .container .Beneficiary .mainTitle {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+.Beneficiaries .container .Beneficiary .secondTitle {
+  display: flex;
+  font-size: 18px;
+  min-height: 90px;
+}
+@media screen and (max-width: 768px) {
+  .Beneficiaries .container .Beneficiary .secondTitle {
+    font-size: 14px;
+  }
+}
+.Beneficiaries .container .Beneficiary .line {
+  height: 2px;
+  width: 70%;
+  border-radius: 8px;
+  background-color: #d77673;
+  display: block;
 }
 
 .sectors {
@@ -585,7 +631,7 @@ content {
   background-color: #ffffff;
 }
 .sectors .container {
-  width: min(100% - 24px, 1000px);
+  width: min(100% - 24px, 950px);
 }
 .sectors .title {
   font-size: 50px;
@@ -593,6 +639,7 @@ content {
   text-align: center;
   color: #1d2739;
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 .sectors .title span {
   color: #d77673;
@@ -603,174 +650,47 @@ content {
     font-size: 30px;
   }
 }
-.sectors .singleSector {
-  padding: 40px;
+.sectors .sectorsRow {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 2/1;
+  justify-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.sectors .sectorsRow .singleSector {
+  flex: 1 calc(50% - 16px);
+  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
   background-size: cover;
+  gap: 12px;
+  background-color: #d77673;
 }
-@media screen and (max-width: 768px) {
-  .sectors .singleSector {
-    text-align: center;
-  }
+.sectors .sectorsRow .singleSector:nth-child(3n+1) {
+  background-color: #2e3c55;
 }
-.sectors .singleSector .name {
+.sectors .sectorsRow .singleSector:nth-child(4n+1) {
+  background-color: #2e3c55;
+}
+.sectors .sectorsRow .singleSector .name {
   font-family: "fontBold";
   font-weight: bold;
-}
-
-.RSVP {
-  padding: 80px 0;
-  background: url(../img/footerBG.png);
-  background-size: cover;
-  background-position: center;
-}
-.RSVP .call {
-  margin: 32px auto;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 8px 24px;
-  display: flex;
-  gap: 12px;
-  border: 1px solid #d77673;
-  border-radius: 100px;
-  color: #ffffff;
-}
-.RSVP .container {
-  width: min(100% - 24px, 1000px);
-}
-.RSVP form {
-  padding: 48px 32px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  margin-top: 12px;
-}
-@media (max-width: 576px) {
-  .RSVP form {
-    padding: 32px 0;
-  }
-}
-.RSVP form .form-group {
-  display: flex;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .RSVP form .form-group {
-    flex-direction: column;
-    gap: 48px;
-  }
-}
-.RSVP form .form-group .inputfield {
-  width: 100%;
-  padding: 0 32px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield {
-    padding: 0 16px;
-  }
-}
-.RSVP form .form-group .inputfield label {
-  position: absolute;
-  font-size: 14px;
-  color: #d77673;
-  right: 32px;
-  transform: translateY(-50%);
-  top: 50%;
-  transition: 0.3s ease-in-out;
-  cursor: auto;
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield label {
-    left: 16px;
-  }
-}
-.RSVP form .form-group .inputfield label.message-label {
-  top: 20%;
-}
-.RSVP form .form-group .inputfield label.h {
-  top: -4px;
-  color: #d77673;
-}
-.RSVP form .form-group .inputfield input,
-.RSVP form .form-group .inputfield textarea,
-.RSVP form .form-group .inputfield select {
-  width: 100%;
-  height: 45px;
-  border: none;
-  background: none;
-  outline: none;
-  color: #ffffff;
-}
-.RSVP form .form-group .inputfield input:focus + span::after,
-.RSVP form .form-group .inputfield textarea:focus + span::after,
-.RSVP form .form-group .inputfield select:focus + span::after {
-  width: calc(100% - 64px);
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield input:focus + span::after,
-  .RSVP form .form-group .inputfield textarea:focus + span::after,
-  .RSVP form .form-group .inputfield select:focus + span::after {
-    width: calc(100% - 32px);
-  }
-}
-.RSVP form .form-group .inputfield input option,
-.RSVP form .form-group .inputfield textarea option,
-.RSVP form .form-group .inputfield select option {
-  color: #131518;
-}
-.RSVP form .form-group .inputfield textarea {
-  padding: 16px 0;
-  height: 130px;
-}
-.RSVP form .form-group .inputfield .highlight {
-  width: 100%;
-  height: 2px;
-  background: #8f949d;
-}
-.RSVP form .form-group .inputfield .highlight::after {
-  content: "";
-  width: 0;
-  transition: 0.3s ease-in-out;
-  right: 50%;
-  height: 2px;
-  background: #d77673;
-  position: absolute;
-  transform: translate(50%);
-}
-.RSVP form .form-group:nth-child(even) label {
-  color: #ffffff !important;
-}
-.RSVP .title {
-  font-size: 50px;
-  font-family: "fontBold";
-  text-align: center;
-  color: #ffffff;
-}
-.RSVP .title span {
-  color: #d77673;
-  font-family: "fontBold";
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: capitalize;
 }
 @media screen and (max-width: 768px) {
-  .RSVP .title {
-    font-size: 20px;
+  .sectors .sectorsRow .singleSector .name {
+    font-size: 18px;
+    line-height: 18px;
   }
 }
-.RSVP .btnSubmit {
-  background-color: #d77673;
-  color: #ffffff;
-  padding: 8px 24px;
-  border-radius: 100px;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
+.sectors .sectorsRow .singleSector .line {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  display: block;
 }
 
 /* For Chrome, Safari, and newer versions of Edge */
@@ -826,7 +746,7 @@ input:-moz-autofill {
   align-items: center;
   gap: 16px;
   min-width: 300px;
-  border-right: 1px solid #d77673;
+  border-left: 1px solid #d77673;
   color: #ffffff;
   background-size: cover;
 }
@@ -835,7 +755,7 @@ input:-moz-autofill {
 }
 @media screen and (max-width: 768px) {
   .benefits .benefitRow .benefit {
-    border-right: none;
+    border-left: none;
     border-bottom: 1px solid #d77673;
   }
 }
@@ -887,7 +807,7 @@ input:-moz-autofill {
   text-align: center;
   color: #ffffff;
   padding: 8px;
-  background: linear-gradient(to right, rgba(46, 60, 85, 0.6588235294), #2e3c55, rgba(46, 60, 85, 0.6588235294));
+  background: linear-gradient(to left, rgba(46, 60, 85, 0.6588235294), #2e3c55, rgba(46, 60, 85, 0.6588235294));
   font-weight: bold;
 }
 .beneficiaryFields .container .fields .field span {

@@ -11,12 +11,12 @@ $BigShadow: 0 16px 32px 0 #071c1f1a;
 @font-face {
   font-family: fontRegular;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-R.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Normal.otf);
 }
 @font-face {
   font-family: fontBold;
   font-display: swap;
-  src: url(../webfonts/KanunHairline-B.ttf);
+  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Bold.otf);
 }
 * {
   font-family: "fontRegular", sans-serif;
@@ -196,7 +196,7 @@ button {
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      right: 0;
       top: 0;
       width: 250px;
       height: 250px;
@@ -233,18 +233,18 @@ button {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
     background-color: $darkColor;
     transition: transform 2s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transform: translateX(-0%);
+    transform: translateX(0%);
   }
   &.oppositeDir {
     &::after {
-      right: unset;
       left: 0;
+      right: unset;
     }
   }
   .lazy {
@@ -254,11 +254,11 @@ button {
   }
   &.loaded {
     &::after {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
     &.oppositeDir {
       &::after {
-        transform: translateX(-100%);
+        transform: translateX(100%);
       }
     }
     &.down {
@@ -292,7 +292,7 @@ content {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
-  background-position: top left;
+  background-position: top right;
   background-image: url(../img/body-bg.png);
 }
 .socialMedia {
@@ -359,7 +359,7 @@ content {
     display: flex;
     align-items: center;
     gap: 24px;
-    width: min(100% - 24px, 1320px);
+    width: min(100% - 24px, 950px);
     margin: auto;
     padding: 24px 0;
     justify-content: space-around;
@@ -374,7 +374,7 @@ content {
   }
   .hearoBG {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -385,7 +385,7 @@ content {
       width: 100%;
       height: 100%;
       position: absolute;
-      left: 0;
+      right: 0;
       top: 0;
       background-color: #000;
       opacity: 0.4;
@@ -406,15 +406,16 @@ content {
     position: relative;
     z-index: 3;
     flex: 1;
-    padding: 40px 0;
+    padding: 80px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     .inner {
       gap: 40px;
       display: flex;
-      width: min(100% - 24px, 1100px);
       flex: 1;
+      max-width: 950px;
+      width: calc(100% - 24px);
       .title {
         font-size: 60px;
         font-family: "fontBold";
@@ -440,11 +441,11 @@ content {
       .subTitle {
         display: flex;
         align-items: center;
+        font-size: 18px;
         @media screen and (max-width: 768px) {
-          font-size: 22px;
+          font-size: 14px;
         }
       }
-
       @media screen and (max-width: 768px) {
         flex-direction: column;
         text-align: center;
@@ -488,29 +489,28 @@ content {
       border-radius: 50%;
       position: absolute;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 50%;
+      transform: translateX(50%);
       animation: scrollDown linear 2s infinite;
       transition: $transition;
     }
   }
   @keyframes scrollDown {
     0% {
-      transform: translate(-50%, 0px);
+      transform: translate(50%, 0px);
       opacity: 0;
     }
     50% {
-      transform: translate(-50%, 16px);
+      transform: translate(50%, 16px);
       opacity: 1;
     }
     100% {
-      transform: translate(-50%, 32px);
+      transform: translate(50%, 32px);
       opacity: 0;
     }
   }
 }
-
-.about {
+.Beneficiaries {
   background-color: #1d2739;
   padding: 80px 0;
   .container {
@@ -518,9 +518,11 @@ content {
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
+    flex: 1;
+    max-width: 950px;
+    width: calc(100% - 24px);
     @media screen and (max-width: 768px) {
-      padding: 24px;
-      text-align: center;
+      padding: 0px;
     }
     .title {
       font-size: 50px;
@@ -530,28 +532,65 @@ content {
       color: $mainColor;
       flex: 2;
       min-width: 250px;
+      text-transform: uppercase;
       @media screen and (max-width: 768px) {
         font-size: 40px;
-        justify-content: start;
       }
     }
-    .sub {
-      font-size: 36px;
-      flex: 3;
-      min-width: 250px;
+    .Beneficiary {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 30px;
+      padding-top: 160px;
+      background-image: url(../img/Beneficiary1.png);
+      background-size: cover;
       color: $whiteColor;
+      gap: 16px;
       @media screen and (max-width: 768px) {
-        font-size: 20px;
+        padding: 20px;
+        padding-top: 120px;
+      }
+      .mainTitle {
+        font-size: 40px;
+        font-family: "fontBold";
+        font-weight: bold;
+        line-height: 40px;
+        span {
+          font-family: "fontBold";
+          font-weight: bold;
+          display: block;
+          color: $mainColor;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+      .secondTitle {
+        display: flex;
+        font-size: 18px;
+        min-height: 90px;
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      .line {
+        height: 2px;
+        width: 70%;
+        border-radius: 8px;
+        background-color: $mainColor;
+        display: block;
       }
     }
   }
 }
-
 .sectors {
   padding: 80px 0;
   background-color: $whiteColor;
   .container {
-    width: min(100% - 24px, 1000px);
+    width: min(100% - 24px, 950px);
   }
   .title {
     font-size: 50px;
@@ -559,6 +598,7 @@ content {
     text-align: center;
     color: #1d2739;
     margin-bottom: 24px;
+    text-transform: uppercase;
     span {
       color: $mainColor;
       font-family: "fontBold";
@@ -567,159 +607,48 @@ content {
       font-size: 30px;
     }
   }
-  .singleSector {
-    padding: 40px;
+  .sectorsRow {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 2/1;
-
-    color: $whiteColor;
-    background-size: cover;
-    @media screen and (max-width: 768px) {
-      text-align: center;
-    }
-    .name {
-      font-family: "fontBold";
-      font-weight: bold;
-    }
-  }
-}
-
-.RSVP {
-  padding: 80px 0;
-  background: url(../img/footerBG.png);
-  background-size: cover;
-  background-position: center;
-  .call {
-    margin: 32px auto;
-    width: fit-content;
-    padding: 8px 24px;
-    display: flex;
-    gap: 12px;
-    border: 1px solid $mainColor;
-    border-radius: 100px;
-    color: $whiteColor;
-  }
-
-  .container {
-    width: min(100% - 24px, 1000px);
-  }
-
-  form {
-    padding: 48px 32px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    margin-top: 12px;
-    @media (max-width: 576px) {
-      padding: 32px 0;
-    }
-    .form-group {
+    justify-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .singleSector {
+      flex: 1 calc(50% - 16px);
+      min-width: 300px;
+      padding: 20px;
       display: flex;
-      width: 100%;
-
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 48px;
+      flex-direction: column;
+      color: $whiteColor;
+      background-size: cover;
+      gap: 12px;
+      background-color: $mainColor;
+      // &:nth-child(1 + 2n) {
+      //   background-color: #2e3c55;
+      // }
+      &:nth-child(3n + 1) {
+        background-color: #2e3c55;
       }
-      .inputfield {
+      &:nth-child(4n + 1) {
+        background-color: #2e3c55;
+      }
+      .name {
+        font-family: "fontBold";
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: capitalize;
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+      .line {
         width: 100%;
-        padding: 0 32px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        @media (max-width: 576px) {
-          padding: 0 16px;
-        }
-        label {
-          position: absolute;
-          font-size: 14px;
-          color: $mainColor;
-          right: 32px;
-          transform: translateY(-50%);
-          top: 50%;
-          transition: $transition;
-          cursor: auto;
-          @media (max-width: 576px) {
-            left: 16px;
-          }
-          &.message-label {
-            top: 20%;
-          }
-          &.h {
-            top: -4px;
-            color: $mainColor;
-          }
-        }
-        input,
-        textarea,
-        select {
-          width: 100%;
-          height: 45px;
-          border: none;
-          background: none;
-          outline: none;
-          color: $whiteColor;
-          &:focus + span::after {
-            width: calc(100% - 64px);
-            @media (max-width: 576px) {
-              width: calc(100% - 32px);
-            }
-          }
-          option {
-            color: $darkColor;
-          }
-        }
-        textarea {
-          padding: 16px 0;
-          height: 130px;
-        }
-        .highlight {
-          width: 100%;
-          height: 2px;
-          background: #8f949d;
-          &::after {
-            content: "";
-            width: 0;
-            transition: $transition;
-            right: 50%;
-            height: 2px;
-            background: $mainColor;
-            position: absolute;
-            transform: translate(50%);
-          }
-        }
-      }
-      &:nth-child(even) {
-        label {
-          color: $whiteColor !important;
-        }
+        height: 1px;
+        background-color: $whiteColor;
+        display: block;
       }
     }
-  }
-
-  .title {
-    font-size: 50px;
-    font-family: "fontBold";
-    text-align: center;
-    color: $whiteColor;
-    span {
-      color: $mainColor;
-      font-family: "fontBold";
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 20px;
-    }
-  }
-  .btnSubmit {
-    background-color: $mainColor;
-    color: $whiteColor;
-    padding: 8px 24px;
-    border-radius: 100px;
-    width: fit-content;
-    margin: auto;
   }
 }
 
@@ -729,7 +658,6 @@ input:-webkit-autofill {
   /* Additional styling */
   color: #333;
 }
-
 /* For Firefox */
 input:-moz-autofill {
   background-color: transparent; /* Change to desired color */
@@ -771,14 +699,14 @@ input:-moz-autofill {
       align-items: center;
       gap: 16px;
       min-width: 300px;
-      border-right: 1px solid $mainColor;
+      border-left: 1px solid $mainColor;
       &:nth-child(3n) {
         border: none;
       }
       color: $whiteColor;
       background-size: cover;
       @media screen and (max-width: 768px) {
-        border-right: none;
+        border-left: none;
         border-bottom: 1px solid $mainColor;
       }
       .des {
@@ -825,7 +753,7 @@ input:-moz-autofill {
         text-align: center;
         color: $whiteColor;
         padding: 8px;
-        background: linear-gradient(to right, #2e3c55a8, #2e3c55, #2e3c55a8);
+        background: linear-gradient(to left, #2e3c55a8, #2e3c55, #2e3c55a8);
         font-weight: bold;
         span {
           color: $mainColor;

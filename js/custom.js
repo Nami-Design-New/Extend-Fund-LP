@@ -204,7 +204,7 @@ $(document).ready(function () {
     sectionDivs.each(function (index) {
       // Check if data-aos-delay is not already set
       if (!$(this).attr("data-aos-delay")) {
-        $(this).attr("data-aos-delay", (index + 1) * 100);
+        $(this).attr("data-aos-delay", (index + 1) * 200);
       }
     });
   });
