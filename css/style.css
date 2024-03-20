@@ -202,8 +202,8 @@ button {
 .preloader .preloaderImg {
   width: 250px;
   height: 250px;
-  -webkit-mask-image: url("../img/logoV.svg");
-          mask-image: url("../img/logoV.svg");
+  -webkit-mask-image: url("../img/logo.svg");
+          mask-image: url("../img/logo.svg");
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-position: center;
