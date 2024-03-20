@@ -683,157 +683,6 @@ content {
   display: block;
 }
 
-.RSVP {
-  padding: 80px 0;
-  background: url(../img/footerBG.png);
-  background-size: cover;
-  background-position: center;
-}
-.RSVP .call {
-  margin: 32px auto;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 8px 24px;
-  display: flex;
-  gap: 12px;
-  border: 1px solid #d77673;
-  border-radius: 100px;
-  color: #ffffff;
-}
-.RSVP .container {
-  width: min(100% - 24px, 1000px);
-}
-.RSVP form {
-  padding: 48px 32px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  margin-top: 12px;
-}
-@media (max-width: 576px) {
-  .RSVP form {
-    padding: 32px 0;
-  }
-}
-.RSVP form .form-group {
-  display: flex;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .RSVP form .form-group {
-    flex-direction: column;
-    gap: 48px;
-  }
-}
-.RSVP form .form-group .inputfield {
-  width: 100%;
-  padding: 0 32px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield {
-    padding: 0 16px;
-  }
-}
-.RSVP form .form-group .inputfield label {
-  position: absolute;
-  font-size: 14px;
-  color: #d77673;
-  left: 32px;
-  transform: translateY(-50%);
-  top: 50%;
-  transition: 0.3s ease-in-out;
-  cursor: auto;
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield label {
-    right: 16px;
-  }
-}
-.RSVP form .form-group .inputfield label.message-label {
-  top: 20%;
-}
-.RSVP form .form-group .inputfield label.h {
-  top: -4px;
-  color: #d77673;
-}
-.RSVP form .form-group .inputfield input,
-.RSVP form .form-group .inputfield textarea,
-.RSVP form .form-group .inputfield select {
-  width: 100%;
-  height: 45px;
-  border: none;
-  background: none;
-  outline: none;
-  color: #ffffff;
-}
-.RSVP form .form-group .inputfield input:focus + span::after,
-.RSVP form .form-group .inputfield textarea:focus + span::after,
-.RSVP form .form-group .inputfield select:focus + span::after {
-  width: calc(100% - 64px);
-}
-@media (max-width: 576px) {
-  .RSVP form .form-group .inputfield input:focus + span::after,
-  .RSVP form .form-group .inputfield textarea:focus + span::after,
-  .RSVP form .form-group .inputfield select:focus + span::after {
-    width: calc(100% - 32px);
-  }
-}
-.RSVP form .form-group .inputfield input option,
-.RSVP form .form-group .inputfield textarea option,
-.RSVP form .form-group .inputfield select option {
-  color: #131518;
-}
-.RSVP form .form-group .inputfield textarea {
-  padding: 16px 0;
-  height: 130px;
-}
-.RSVP form .form-group .inputfield .highlight {
-  width: 100%;
-  height: 2px;
-  background: #8f949d;
-}
-.RSVP form .form-group .inputfield .highlight::after {
-  content: "";
-  width: 0;
-  transition: 0.3s ease-in-out;
-  left: 50%;
-  height: 2px;
-  background: #d77673;
-  position: absolute;
-  transform: translate(-50%);
-}
-.RSVP form .form-group:nth-child(even) label {
-  color: #ffffff !important;
-}
-.RSVP .title {
-  font-size: 50px;
-  font-family: "fontBold";
-  text-align: center;
-  color: #ffffff;
-}
-.RSVP .title span {
-  color: #d77673;
-  font-family: "fontBold";
-}
-@media screen and (max-width: 768px) {
-  .RSVP .title {
-    font-size: 20px;
-  }
-}
-.RSVP .btnSubmit {
-  background-color: #d77673;
-  color: #ffffff;
-  padding: 8px 24px;
-  border-radius: 100px;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
-}
-
 /* For Chrome, Safari, and newer versions of Edge */
 input:-webkit-autofill {
   background-color: transparent; /* Change to desired color */
@@ -912,4 +761,93 @@ input:-moz-autofill {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.beneficiaryFields {
+  padding: 80px 0;
+  background-image: url(../img/fieldsBG.jpg);
+}
+.beneficiaryFields .container {
+  width: min(100% - 24px, 950px);
+  margin: auto;
+}
+.beneficiaryFields .container .sectionTitle {
+  font-size: 50px;
+  font-family: "fontBold";
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #1d2739;
+}
+.beneficiaryFields .container .sectionTitle span {
+  font-family: "fontBold";
+  color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .beneficiaryFields .container .sectionTitle {
+    font-size: 30px;
+  }
+}
+.beneficiaryFields .container .fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.beneficiaryFields .container .fields .field {
+  text-align: center;
+  color: #ffffff;
+  padding: 8px;
+  background: linear-gradient(to right, rgba(46, 60, 85, 0.6588235294), #2e3c55, rgba(46, 60, 85, 0.6588235294));
+  font-weight: bold;
+}
+.beneficiaryFields .container .fields .field span {
+  color: #d77673;
+  font-weight: bold;
+}
+
+footer {
+  padding: 80px 0;
+  background: url(../img/footerBG.png);
+  background-size: cover;
+  background-position: center;
+}
+footer .call {
+  margin: 32px auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 24px;
+  display: flex;
+  gap: 12px;
+  border: 1px solid #d77673;
+  color: #ffffff;
+}
+footer .call span {
+  color: #d77673;
+}
+footer .container {
+  width: min(100% - 24px, 950px);
+}
+footer .title {
+  font-size: 50px;
+  font-family: "fontBold";
+  text-align: center;
+  color: #ffffff;
+}
+footer .title span {
+  color: #d77673;
+  font-family: "fontBold";
+}
+@media screen and (max-width: 768px) {
+  footer .title {
+    font-size: 20px;
+  }
+}
+footer .btnSubmit {
+  background-color: #d77673;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

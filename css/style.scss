@@ -643,138 +643,7 @@ content {
     }
   }
 }
-.RSVP {
-  padding: 80px 0;
-  background: url(../img/footerBG.png);
-  background-size: cover;
-  background-position: center;
-  .call {
-    margin: 32px auto;
-    width: fit-content;
-    padding: 8px 24px;
-    display: flex;
-    gap: 12px;
-    border: 1px solid $mainColor;
-    border-radius: 100px;
-    color: $whiteColor;
-  }
-  .container {
-    width: min(100% - 24px, 1000px);
-  }
-  form {
-    padding: 48px 32px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    margin-top: 12px;
-    @media (max-width: 576px) {
-      padding: 32px 0;
-    }
-    .form-group {
-      display: flex;
-      width: 100%;
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 48px;
-      }
-      .inputfield {
-        width: 100%;
-        padding: 0 32px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        @media (max-width: 576px) {
-          padding: 0 16px;
-        }
-        label {
-          position: absolute;
-          font-size: 14px;
-          color: $mainColor;
-          left: 32px;
-          transform: translateY(-50%);
-          top: 50%;
-          transition: $transition;
-          cursor: auto;
-          @media (max-width: 576px) {
-            right: 16px;
-          }
-          &.message-label {
-            top: 20%;
-          }
-          &.h {
-            top: -4px;
-            color: $mainColor;
-          }
-        }
-        input,
-        textarea,
-        select {
-          width: 100%;
-          height: 45px;
-          border: none;
-          background: none;
-          outline: none;
-          color: $whiteColor;
-          &:focus + span::after {
-            width: calc(100% - 64px);
-            @media (max-width: 576px) {
-              width: calc(100% - 32px);
-            }
-          }
-          option {
-            color: $darkColor;
-          }
-        }
-        textarea {
-          padding: 16px 0;
-          height: 130px;
-        }
-        .highlight {
-          width: 100%;
-          height: 2px;
-          background: #8f949d;
-          &::after {
-            content: "";
-            width: 0;
-            transition: $transition;
-            left: 50%;
-            height: 2px;
-            background: $mainColor;
-            position: absolute;
-            transform: translate(-50%);
-          }
-        }
-      }
-      &:nth-child(even) {
-        label {
-          color: $whiteColor !important;
-        }
-      }
-    }
-  }
-  .title {
-    font-size: 50px;
-    font-family: "fontBold";
-    text-align: center;
-    color: $whiteColor;
-    span {
-      color: $mainColor;
-      font-family: "fontBold";
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 20px;
-    }
-  }
-  .btnSubmit {
-    background-color: $mainColor;
-    color: $whiteColor;
-    padding: 8px 24px;
-    border-radius: 100px;
-    width: fit-content;
-    margin: auto;
-  }
-}
+
 /* For Chrome, Safari, and newer versions of Edge */
 input:-webkit-autofill {
   background-color: transparent; /* Change to desired color */
@@ -824,14 +693,13 @@ input:-moz-autofill {
       min-width: 300px;
       border-right: 1px solid $mainColor;
       &:nth-child(3n) {
-        border: none ;
+        border: none;
       }
       color: $whiteColor;
       background-size: cover;
       @media screen and (max-width: 768px) {
         border-right: none;
         border-bottom: 1px solid $mainColor;
-
       }
       .des {
         text-align: center;
@@ -846,5 +714,92 @@ input:-moz-autofill {
         }
       }
     }
+  }
+}
+.beneficiaryFields {
+  padding: 80px 0;
+  background-image: url(../img/fieldsBG.jpg);
+  .container {
+    width: min(100% - 24px, 950px);
+    margin: auto;
+    .sectionTitle {
+      font-size: 50px;
+      font-family: "fontBold";
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: #1d2739;
+      span {
+        font-family: "fontBold";
+        color: $whiteColor;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    .fields {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .field {
+        text-align: center;
+        color: $whiteColor;
+        padding: 8px;
+        background: linear-gradient(to right, #2e3c55a8, #2e3c55, #2e3c55a8);
+        font-weight: bold;
+        span {
+          color: $mainColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+
+
+footer {
+  padding: 80px 0;
+  background: url(../img/footerBG.png);
+  background-size: cover;
+  background-position: center;
+  .call {
+    margin: 32px auto;
+    width: fit-content;
+    padding: 8px 24px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid $mainColor;
+    color: $whiteColor;
+    span{
+      color: $mainColor;
+    }
+  }
+
+  .container {
+    width: min(100% - 24px, 950px);
+  }
+
+
+  .title {
+    font-size: 50px;
+    font-family: "fontBold";
+    text-align: center;
+    color: $whiteColor;
+    span {
+      color: $mainColor;
+      font-family: "fontBold";
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+  .btnSubmit {
+    background-color: $mainColor;
+    color: $whiteColor;
+    padding: 8px 24px;
+    border-radius: 100px;
+    width: fit-content;
+    margin: auto;
   }
 }
