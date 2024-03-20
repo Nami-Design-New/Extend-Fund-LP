@@ -776,4 +776,59 @@ input:-moz-autofill {
   /* Additional styling */
   border: 1px solid #ccc;
   color: #333;
+}
+
+.regiester_form {
+  padding: 60px 0;
+  background: #1a1d21;
+}
+.regiester_form .container {
+  width: min(100% - 24px, 950px) !important;
+}
+.regiester_form .input_field {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  gap: 4px;
+}
+.regiester_form .input_field label,
+.regiester_form .input_field h6 {
+  font-size: 14px;
+  color: #ced4da;
+}
+.regiester_form .input_field input,
+.regiester_form .input_field select,
+.regiester_form .input_field textarea {
+  background: #212529;
+  border: 1px solid #2a2f34;
+  border-radius: 8px;
+  color: #ced4da;
+  height: 54px;
+  outline: none;
+  padding: 12px 16px;
+}
+.regiester_form .input_field input::-moz-placeholder, .regiester_form .input_field select::-moz-placeholder, .regiester_form .input_field textarea::-moz-placeholder {
+  color: #777;
+}
+.regiester_form .input_field input::placeholder,
+.regiester_form .input_field select::placeholder,
+.regiester_form .input_field textarea::placeholder {
+  color: #777;
+}
+.regiester_form .input_field textarea {
+  height: 120px;
+}
+.regiester_form .input_field .form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.regiester_form .input_field .form-check input {
+  width: 16px;
+  height: 16px;
+}
+.regiester_form .input_field input[type=radio] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }/*# sourceMappingURL=styleAR.css.map */

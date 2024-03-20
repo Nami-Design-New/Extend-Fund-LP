@@ -120,7 +120,7 @@ input {
 }
 ::placeholder {
   font-size: 12px;
-  color: #bababa !important ;
+  color: #bababa !important;
   font-weight: normal !important;
 }
 ::selection {
@@ -322,6 +322,10 @@ content {
     }
     &:hover {
       transform: translateY(-4px);
+    }
+    &.register{
+      width: fit-content;
+      border-radius: 4px;
     }
   }
   .line {
@@ -756,8 +760,6 @@ input:-moz-autofill {
   }
 }
 
-
-
 footer {
   padding: 80px 0;
   background: url(../img/footerBG.png);
@@ -771,7 +773,7 @@ footer {
     gap: 12px;
     border: 1px solid $mainColor;
     color: $whiteColor;
-    span{
+    span {
       color: $mainColor;
     }
   }
@@ -779,7 +781,6 @@ footer {
   .container {
     width: min(100% - 24px, 950px);
   }
-
 
   .title {
     font-size: 50px;
@@ -801,5 +802,90 @@ footer {
     border-radius: 100px;
     width: fit-content;
     margin: auto;
+  }
+}
+// regiester
+.regiester_form {
+  padding: 60px 0;
+  background: #1a1d21;
+  .container {
+    width: min(100% - 24px, 950px) !important;
+  }
+  .input_field {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+    gap: 8px;
+    label,
+    h6 {
+      font-size: 14px;
+      color: #ced4da;
+    }
+    input,
+    select,
+    textarea {
+      background: #212529;
+      border: 1px solid #2a2f34;
+      border-radius: 8px;
+      color: #ced4da;
+      height: 54px;
+      outline: none;
+      padding: 12px 16px;
+      &::placeholder {
+        color: $grayColor;
+      }
+    }
+    textarea {
+      height: 120px;
+    }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      label {
+        cursor: pointer;
+      }
+      input {
+        min-width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        box-shadow: none !important;
+        padding: 0;
+        &:checked {
+          border-color: $mainColor;
+        }
+      }
+      input[type="checkbox"] {
+        border-radius: 4px !important;
+        color: $whiteColor;
+        position: relative;
+        &::after {
+          content: "✓";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $mainColor;
+          font-size: 12px;
+          display: none;
+        }
+        &:checked {
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+    button {
+      width: 25%;
+      height: 54px;
+      background: $mainColor;
+      border-radius: 12px;
+      color: $whiteColor;
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+    }
   }
 }

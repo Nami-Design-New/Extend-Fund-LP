@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: fontRegular;
   font-display: swap;
@@ -337,6 +338,11 @@ content {
 }
 .socialMedia a:hover {
   transform: translateY(-4px);
+}
+.socialMedia a.register {
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
 }
 .socialMedia .line {
   width: 1px;
@@ -850,4 +856,94 @@ footer .btnSubmit {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+}
+
+.regiester_form {
+  padding: 60px 0;
+  background: #1a1d21;
+}
+.regiester_form .container {
+  width: min(100% - 24px, 950px) !important;
+}
+.regiester_form .input_field {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  gap: 8px;
+}
+.regiester_form .input_field label,
+.regiester_form .input_field h6 {
+  font-size: 14px;
+  color: #ced4da;
+}
+.regiester_form .input_field input,
+.regiester_form .input_field select,
+.regiester_form .input_field textarea {
+  background: #212529;
+  border: 1px solid #2a2f34;
+  border-radius: 8px;
+  color: #ced4da;
+  height: 54px;
+  outline: none;
+  padding: 12px 16px;
+}
+.regiester_form .input_field input::-moz-placeholder, .regiester_form .input_field select::-moz-placeholder, .regiester_form .input_field textarea::-moz-placeholder {
+  color: #777;
+}
+.regiester_form .input_field input::placeholder,
+.regiester_form .input_field select::placeholder,
+.regiester_form .input_field textarea::placeholder {
+  color: #777;
+}
+.regiester_form .input_field textarea {
+  height: 120px;
+}
+.regiester_form .input_field .form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.regiester_form .input_field .form-check label {
+  cursor: pointer;
+}
+.regiester_form .input_field .form-check input {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-shadow: none !important;
+  padding: 0;
+}
+.regiester_form .input_field .form-check input:checked {
+  border-color: #d77673;
+}
+.regiester_form .input_field .form-check input[type=checkbox] {
+  border-radius: 4px !important;
+  color: #ffffff;
+  position: relative;
+}
+.regiester_form .input_field .form-check input[type=checkbox]::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d77673;
+  font-size: 12px;
+  display: none;
+}
+.regiester_form .input_field .form-check input[type=checkbox]:checked::after {
+  display: block;
+}
+.regiester_form .input_field button {
+  width: 25%;
+  height: 54px;
+  background: #d77673;
+  border-radius: 12px;
+  color: #ffffff;
+}
+@media (max-width: 576px) {
+  .regiester_form .input_field button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
