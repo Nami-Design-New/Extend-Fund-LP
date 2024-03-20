@@ -120,7 +120,7 @@ input {
 }
 ::placeholder {
   font-size: 12px;
-  color: #bababa !important ;
+  color: #bababa !important;
   font-weight: normal !important;
 }
 ::selection {
@@ -323,6 +323,11 @@ content {
     &:hover {
       transform: translateY(-4px);
     }
+    &.register {
+      width: fit-content;
+      border-radius: 100px;
+      padding: 8px 16px;
+    }
   }
   .line {
     width: 1px;
@@ -344,6 +349,9 @@ content {
   display: flex;
   flex-direction: column;
   padding: 24px 0;
+  &.register {
+    min-height: 32vh;
+  }
   * {
     color: $whiteColor;
   }
@@ -419,8 +427,8 @@ content {
           color: $mainColor;
         }
         @media screen and (max-width: 768px) {
-          font-size: 40px;
-          line-height: normal;
+          font-size: 60px;
+          line-height: 1.3;
         }
       }
       .line {
@@ -729,7 +737,159 @@ input:-moz-autofill {
   border: 1px solid #ccc;
   color: #333;
 }
+.benefits {
+  background-color: #1d2739;
+  padding: 80px 0;
+  .container {
+    width: min(100% - 24px, 1100px);
+  }
+  .title {
+    font-size: 50px;
+    font-family: "fontBold";
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: $whiteColor;
+    span {
+      font-family: "fontBold";
+      color: $mainColor;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
+  }
+  .benefitRow {
+    display: flex;
+    justify-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    .benefit {
+      flex: 1 calc(33% - 16px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      min-width: 300px;
+      border-right: 1px solid $mainColor;
+      &:nth-child(3n) {
+        border: none;
+      }
+      color: $whiteColor;
+      background-size: cover;
+      @media screen and (max-width: 768px) {
+        border-right: none;
+        border-bottom: 1px solid $mainColor;
+      }
+      .des {
+        text-align: center;
+      }
+      .icon {
+        width: 64px;
+        height: 64px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+.beneficiaryFields {
+  padding: 80px 0;
+  background-image: url(../img/fieldsBG.jpg);
+  .container {
+    width: min(100% - 24px, 950px);
+    margin: auto;
+    .sectionTitle {
+      font-size: 50px;
+      font-family: "fontBold";
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: #1d2739;
+      span {
+        font-family: "fontBold";
+        color: $whiteColor;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    .fields {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .field {
+        text-align: center;
+        color: $whiteColor;
+        padding: 8px;
+        background: linear-gradient(to right, #2e3c55a8, #2e3c55, #2e3c55a8);
+        font-weight: bold;
+        span {
+          color: $mainColor;
+          font-weight: bold;
+        }
+        @media (max-width: 576px) {
+          text-align: start;
+        }
+      }
+    }
+  }
+}
 
+footer {
+  padding: 80px 0;
+  background: url(../img/footerBG.png);
+  background-size: cover;
+  background-position: center;
+  .call {
+    margin: 32px auto;
+    width: fit-content;
+    padding: 8px 24px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid $mainColor;
+    color: $whiteColor;
+    span {
+      color: $mainColor;
+    }
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      padding: 8px 60px;
+    }
+  }
+
+  .container {
+    width: min(100% - 24px, 950px);
+  }
+
+  .title {
+    font-size: 50px;
+    font-family: "fontBold";
+    text-align: center;
+    color: $whiteColor;
+    span {
+      color: $mainColor;
+      font-family: "fontBold";
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+  .btnSubmit {
+    background-color: $mainColor;
+    color: $whiteColor;
+    padding: 8px 24px;
+    border-radius: 100px;
+    width: fit-content;
+    margin: auto;
+  }
+}
+// regiester
 .regiester_form {
   padding: 60px 0;
   background: #1a1d21;
@@ -740,7 +900,7 @@ input:-moz-autofill {
     display: flex;
     flex-direction: column;
     padding: 4px 0;
-    gap: 4px;
+    gap: 8px;
     label,
     h6 {
       font-size: 14px;
@@ -763,19 +923,54 @@ input:-moz-autofill {
     textarea {
       height: 120px;
     }
-    .form-check{
+    .form-check {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
-      input{
-        width: 16px;
-        height: 16px;
+      label {
+        cursor: pointer;
+      }
+      input {
+        min-width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        box-shadow: none !important;
+        padding: 0;
+        &:checked {
+          border-color: $mainColor;
+        }
+      }
+      input[type="checkbox"] {
+        border-radius: 4px !important;
+        color: $whiteColor;
+        position: relative;
+        &::after {
+          content: "✓";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $mainColor;
+          font-size: 12px;
+          display: none;
+        }
+        &:checked {
+          &::after {
+            display: block;
+          }
+        }
       }
     }
-    input[type="radio"] {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
+    button {
+      width: 25%;
+      height: 54px;
+      background: $mainColor;
+      border-radius: 12px;
+      color: $whiteColor;
+      @media (max-width: 576px) {
+        width: 100%;
+      }
     }
   }
 }
