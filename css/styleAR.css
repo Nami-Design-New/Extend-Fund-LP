@@ -963,4 +963,76 @@ footer .btnSubmit {
   .regiester_form .input_field button {
     width: 100%;
   }
+}
+
+.faqs {
+  padding: 60px 0;
+  background: #fff;
+}
+.faqs .container {
+  width: min(100% - 24px, 950px) !important;
+}
+.faqs .container .title {
+  font-size: 50px;
+  font-family: "fontBold";
+  text-align: center;
+  color: #1d2739;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.faqs .container .title span {
+  color: #d77673;
+  font-family: "fontBold";
+}
+@media screen and (max-width: 768px) {
+  .faqs .container .title {
+    font-size: 30px;
+  }
+}
+
+.accordion-button {
+  text-align: inherit;
+}
+
+.accordion-button,
+.accordion-body {
+  padding: 16px 0 !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: none !important;
+}
+
+.accordion-button::after {
+  margin-right: auto !important;
+  margin-left: initial;
+}
+
+.accordion-button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.accordion-item {
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-bottom: 1px solid #d7d7d7 !important;
+  border-radius: 0 !important;
+}
+
+.accordion-body {
+  font-size: 16px;
+  color: #404041;
+  line-height: 24px;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+
+.accordion-button {
+  font-size: 14px !important;
+  font-weight: 600;
 }/*# sourceMappingURL=styleAR.css.map */

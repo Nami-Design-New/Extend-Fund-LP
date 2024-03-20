@@ -902,3 +902,59 @@ footer {
     }
   }
 }
+.faqs {
+  padding: 60px 0;
+  background: #fff;
+  .container {
+    width: min(100% - 24px, 950px) !important;
+    .title {
+      font-size: 50px;
+      font-family: "fontBold";
+      text-align: center;
+      color: #1d2739;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      span {
+        color: $mainColor;
+        font-family: "fontBold";
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+.accordion-button {
+  text-align: inherit;
+}
+.accordion-button,
+.accordion-body {
+  padding: 16px 0 !important;
+}
+.accordion-button:not(.collapsed) {
+  background: none !important;
+}
+.accordion-button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.accordion-item {
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-bottom: 1px solid #d7d7d7 !important;
+  border-radius: 0 !important;
+}
+.accordion-body {
+  font-size: 16px;
+  color: #404041;
+  line-height: 24px;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+.accordion-button {
+  font-size: 14px !important;
+  font-weight: 600;
+}
