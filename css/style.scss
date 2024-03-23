@@ -420,12 +420,13 @@ content {
         font-size: 60px;
         font-family: "fontBold";
         font-weight: bold;
-        line-height: 70px;
+        line-height: 56px;
         span {
           font-family: "fontBold";
           font-weight: bold;
           display: block;
           color: $mainColor;
+          font-size: 40px;
         }
         @media screen and (max-width: 768px) {
           font-size: 60px;
@@ -763,6 +764,22 @@ input:-moz-autofill {
           text-align: start;
         }
       }
+    }
+
+    .applyNow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $mainColor;
+      background-color: $whiteColor;
+      border-radius: 100px;
+      padding: 8px;
+      width: fit-content;
+      border-radius: 100px;
+      padding: 8px 32px;
+      margin: 48px auto 0;
+      font-weight: bold;
+
     }
   }
 }

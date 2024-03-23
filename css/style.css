@@ -442,13 +442,14 @@ content {
   font-size: 60px;
   font-family: "fontBold";
   font-weight: bold;
-  line-height: 70px;
+  line-height: 56px;
 }
 .hearo .container .inner .title span {
   font-family: "fontBold";
   font-weight: bold;
   display: block;
   color: #d77673;
+  font-size: 40px;
 }
 @media screen and (max-width: 768px) {
   .hearo .container .inner .title {
@@ -818,6 +819,21 @@ input:-moz-autofill {
   .beneficiaryFields .container .fields .field {
     text-align: start;
   }
+}
+.beneficiaryFields .container .applyNow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d77673;
+  background-color: #ffffff;
+  border-radius: 100px;
+  padding: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100px;
+  padding: 8px 32px;
+  margin: 48px auto 0;
+  font-weight: bold;
 }
 
 footer {
