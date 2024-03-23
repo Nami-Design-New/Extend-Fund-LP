@@ -11,12 +11,12 @@ $BigShadow: 0 16px 32px 0 #071c1f1a;
 @font-face {
   font-family: fontRegular;
   font-display: swap;
-  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Normal.otf);
+  src: url(../webfonts/KanunHairline-R.ttf);
 }
 @font-face {
   font-family: fontBold;
   font-display: swap;
-  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Bold.otf);
+  src: url(../webfonts/KanunHairline-B.ttf);
 }
 * {
   font-family: "fontRegular", sans-serif;
@@ -113,7 +113,7 @@ input {
   accent-color: $mainColor !important;
 }
 .odometer-inside {
-  direction: ltr !important;
+  direction: rtl !important;
 }
 .fancybox__container {
   z-index: 1999;
@@ -135,7 +135,7 @@ input {
 .fancybox__track,
 .fancybox__content,
 .carousel__track {
-  direction: ltr !important;
+  direction: rtl !important;
 }
 .navbar-toggler {
   border: none;
@@ -196,7 +196,7 @@ button {
     &::after {
       content: "";
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       width: 250px;
       height: 250px;
@@ -233,7 +233,7 @@ button {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -243,8 +243,8 @@ button {
   }
   &.oppositeDir {
     &::after {
-      left: 0;
       right: unset;
+      left: 0;
     }
   }
   .lazy {
@@ -254,11 +254,11 @@ button {
   }
   &.loaded {
     &::after {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
     &.oppositeDir {
       &::after {
-        transform: translateX(100%);
+        transform: translateX(-100%);
       }
     }
     &.down {
@@ -292,7 +292,7 @@ content {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
-  background-position: top right;
+  background-position: top left;
   background-image: url(../img/body-bg.png);
 }
 .socialMedia {
@@ -359,7 +359,7 @@ content {
     display: flex;
     align-items: center;
     gap: 24px;
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
     margin: auto;
     padding: 24px 0;
     justify-content: space-around;
@@ -374,7 +374,7 @@ content {
   }
   .hearoBG {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -385,7 +385,7 @@ content {
       width: 100%;
       height: 100%;
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       background-color: #000;
       opacity: 0.4;
@@ -420,12 +420,13 @@ content {
         font-size: 60px;
         font-family: "fontBold";
         font-weight: bold;
-        line-height: 70px;
+        line-height: 56px;
         span {
           font-family: "fontBold";
           font-weight: bold;
           display: block;
           color: $mainColor;
+          font-size: 40px;
         }
         @media screen and (max-width: 768px) {
           font-size: 60px;
@@ -489,23 +490,23 @@ content {
       border-radius: 50%;
       position: absolute;
       top: 0;
-      right: 50%;
-      transform: translateX(50%);
+      left: 50%;
+      transform: translateX(-50%);
       animation: scrollDown linear 2s infinite;
       transition: $transition;
     }
   }
   @keyframes scrollDown {
     0% {
-      transform: translate(50%, 0px);
+      transform: translate(-50%, 0px);
       opacity: 0;
     }
     50% {
-      transform: translate(50%, 16px);
+      transform: translate(-50%, 16px);
       opacity: 1;
     }
     100% {
-      transform: translate(50%, 32px);
+      transform: translate(-50%, 32px);
       opacity: 0;
     }
   }
@@ -590,7 +591,7 @@ content {
   padding: 80px 0;
   background-color: $whiteColor;
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
   }
   .title {
     font-size: 50px;
@@ -607,51 +608,53 @@ content {
       font-size: 30px;
     }
   }
-  .sectorsRow {
+  .singleSector {
+    padding: 40px;
     display: flex;
-    justify-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    .singleSector {
-      flex: 1 calc(50% - 16px);
-      min-width: 300px;
-      padding: 20px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 2/1;
+    color: $whiteColor;
+    background-size: cover;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+    .name {
+      font-family: "fontBold";
+      font-weight: bold;
+    }
+    .details {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      backdrop-filter: blur(20px);
+      padding: 24px;
       display: flex;
-      flex-direction: column;
-      color: $whiteColor;
-      background-size: cover;
-      gap: 12px;
-      background-color: $mainColor;
-      // &:nth-child(1 + 2n) {
-      //   background-color: #2e3c55;
-      // }
-      &:nth-child(3n + 1) {
-        background-color: #2e3c55;
+      justify-content: center;
+      align-items: center;
+      background-color: #00000030;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: .4s ease-in-out !important;
+      overflow: hidden;
+      font-size: 14px;
+      @media screen and (max-width: 768px) {
+        font-size: 13px;
       }
-      &:nth-child(4n + 1) {
-        background-color: #2e3c55;
-      }
-      .name {
-        font-family: "fontBold";
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 24px;
-        text-transform: capitalize;
-        @media screen and (max-width: 768px) {
-          font-size: 18px;
-          line-height: 18px;
-        }
-      }
-      .line {
-        width: 100%;
-        height: 1px;
-        background-color: $whiteColor;
-        display: block;
+    }
+    &:hover {
+      .details {
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
 }
-
 /* For Chrome, Safari, and newer versions of Edge */
 input:-webkit-autofill {
   background-color: transparent; /* Change to desired color */
@@ -728,7 +731,7 @@ input:-moz-autofill {
   padding: 80px 0;
   background-image: url(../img/fieldsBG.jpg);
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
     margin: auto;
     .sectionTitle {
       font-size: 50px;
@@ -764,9 +767,22 @@ input:-moz-autofill {
         }
       }
     }
+    .applyNow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $mainColor;
+      background-color: $whiteColor;
+      border-radius: 100px;
+      padding: 8px;
+      width: fit-content;
+      border-radius: 100px;
+      padding: 8px 32px;
+      margin: 48px auto 0;
+      font-weight: bold;
+    }
   }
 }
-
 footer {
   padding: 80px 0;
   background: url(../img/footerBG.png);
@@ -790,11 +806,9 @@ footer {
       padding: 8px 60px;
     }
   }
-
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
   }
-
   .title {
     font-size: 50px;
     font-family: "fontBold";
@@ -822,7 +836,7 @@ footer {
   padding: 60px 0;
   background: #1a1d21;
   .container {
-    width: min(100% - 24px, 950px) !important;
+    width: min(100% - 8px, 950px) !important;
   }
   .input_field {
     display: flex;
@@ -877,8 +891,8 @@ footer {
           content: "✓";
           position: absolute;
           top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          right: 50%;
+          transform: translate(50%, -50%);
           color: $mainColor;
           font-size: 12px;
           display: none;
@@ -906,7 +920,7 @@ footer {
   padding: 60px 0;
   background: #fff;
   .container {
-    width: min(100% - 24px, 950px) !important;
+    width: min(100% - 8px, 950px) !important;
     .title {
       font-size: 50px;
       font-family: "fontBold";
@@ -934,10 +948,6 @@ footer {
 .accordion-button:not(.collapsed) {
   background: none !important;
 }
-.accordion-button::after {
-  margin-right: auto !important;
-  margin-left: initial;
-}
 .accordion-button:focus {
   outline: none !important;
   border: none !important;
@@ -945,8 +955,8 @@ footer {
 }
 .accordion-item {
   border-top: 0 !important;
-  border-right: 0 !important;
   border-left: 0 !important;
+  border-right: 0 !important;
   border-bottom: 1px solid #d7d7d7 !important;
   border-radius: 0 !important;
 }

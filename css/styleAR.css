@@ -2,12 +2,12 @@
 @font-face {
   font-family: fontRegular;
   font-display: swap;
-  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Normal.otf);
+  src: url(../webfonts/KanunHairline-R.ttf);
 }
 @font-face {
   font-family: fontBold;
   font-display: swap;
-  src: url(../webfonts/Groteskly\ Yours\ \ Okta\ Neue\ Bold.otf);
+  src: url(../webfonts/KanunHairline-B.ttf);
 }
 * {
   font-family: "fontRegular", sans-serif;
@@ -116,7 +116,7 @@ input {
 }
 
 .odometer-inside {
-  direction: ltr !important;
+  direction: rtl !important;
 }
 
 .fancybox__container {
@@ -153,7 +153,7 @@ input {
 .fancybox__track,
 .fancybox__content,
 .carousel__track {
-  direction: ltr !important;
+  direction: rtl !important;
 }
 
 .navbar-toggler {
@@ -215,7 +215,7 @@ button {
 .preloader .preloaderImg::after {
   content: "";
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   width: 250px;
   height: 250px;
@@ -252,7 +252,7 @@ button {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -261,8 +261,8 @@ button {
   transform: translateX(0%);
 }
 .lazyDiv.oppositeDir::after {
-  left: 0;
   right: unset;
+  left: 0;
 }
 .lazyDiv .lazy {
   position: relative;
@@ -270,10 +270,10 @@ button {
   width: 100%;
 }
 .lazyDiv.loaded::after {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 .lazyDiv.loaded.oppositeDir::after {
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 .lazyDiv.loaded.down::after {
   transform: translateY(100%);
@@ -303,7 +303,7 @@ content {
   width: 100%;
   height: 100%;
   background-repeat: repeat;
-  background-position: top right;
+  background-position: top left;
   background-image: url(../img/body-bg.png);
 }
 
@@ -376,7 +376,7 @@ content {
   display: flex;
   align-items: center;
   gap: 24px;
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
   margin: auto;
   padding: 24px 0;
   justify-content: space-around;
@@ -392,7 +392,7 @@ content {
 }
 .hearo .hearoBG {
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   width: 100%;
   height: 100%;
@@ -404,7 +404,7 @@ content {
   width: 100%;
   height: 100%;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   background-color: #000;
   opacity: 0.4;
@@ -442,13 +442,14 @@ content {
   font-size: 60px;
   font-family: "fontBold";
   font-weight: bold;
-  line-height: 70px;
+  line-height: 56px;
 }
 .hearo .container .inner .title span {
   font-family: "fontBold";
   font-weight: bold;
   display: block;
   color: #d77673;
+  font-size: 40px;
 }
 @media screen and (max-width: 768px) {
   .hearo .container .inner .title {
@@ -519,22 +520,22 @@ content {
   border-radius: 50%;
   position: absolute;
   top: 0;
-  right: 50%;
-  transform: translateX(50%);
+  left: 50%;
+  transform: translateX(-50%);
   animation: scrollDown linear 2s infinite;
   transition: 0.3s ease-in-out;
 }
 @keyframes scrollDown {
   0% {
-    transform: translate(50%, 0px);
+    transform: translate(-50%, 0px);
     opacity: 0;
   }
   50% {
-    transform: translate(50%, 16px);
+    transform: translate(-50%, 16px);
     opacity: 1;
   }
   100% {
-    transform: translate(50%, 32px);
+    transform: translate(-50%, 32px);
     opacity: 0;
   }
 }
@@ -631,7 +632,7 @@ content {
   background-color: #ffffff;
 }
 .sectors .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
 }
 .sectors .title {
   font-size: 50px;
@@ -650,47 +651,54 @@ content {
     font-size: 30px;
   }
 }
-.sectors .sectorsRow {
+.sectors .singleSector {
+  padding: 40px;
   display: flex;
-  justify-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.sectors .sectorsRow .singleSector {
-  flex: 1 calc(50% - 16px);
-  min-width: 300px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 2/1;
   color: #ffffff;
   background-size: cover;
-  gap: 12px;
-  background-color: #d77673;
-}
-.sectors .sectorsRow .singleSector:nth-child(3n+1) {
-  background-color: #2e3c55;
-}
-.sectors .sectorsRow .singleSector:nth-child(4n+1) {
-  background-color: #2e3c55;
-}
-.sectors .sectorsRow .singleSector .name {
-  font-family: "fontBold";
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
-  text-transform: capitalize;
 }
 @media screen and (max-width: 768px) {
-  .sectors .sectorsRow .singleSector .name {
-    font-size: 18px;
-    line-height: 18px;
+  .sectors .singleSector {
+    text-align: center;
   }
 }
-.sectors .sectorsRow .singleSector .line {
+.sectors .singleSector .name {
+  font-family: "fontBold";
+  font-weight: bold;
+}
+.sectors .singleSector .details {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
-  height: 1px;
-  background-color: #ffffff;
-  display: block;
+  height: 100%;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1882352941);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease-in-out !important;
+  overflow: hidden;
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .sectors .singleSector .details {
+    font-size: 13px;
+  }
+}
+.sectors .singleSector:hover .details {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* For Chrome, Safari, and newer versions of Edge */
@@ -778,7 +786,7 @@ input:-moz-autofill {
   background-image: url(../img/fieldsBG.jpg);
 }
 .beneficiaryFields .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
   margin: auto;
 }
 .beneficiaryFields .container .sectionTitle {
@@ -819,6 +827,21 @@ input:-moz-autofill {
     text-align: start;
   }
 }
+.beneficiaryFields .container .applyNow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d77673;
+  background-color: #ffffff;
+  border-radius: 100px;
+  padding: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100px;
+  padding: 8px 32px;
+  margin: 48px auto 0;
+  font-weight: bold;
+}
 
 footer {
   padding: 80px 0;
@@ -848,7 +871,7 @@ footer .call span {
   }
 }
 footer .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
 }
 footer .title {
   font-size: 50px;
@@ -880,7 +903,7 @@ footer .btnSubmit {
   background: #1a1d21;
 }
 .regiester_form .container {
-  width: min(100% - 24px, 950px) !important;
+  width: min(100% - 8px, 950px) !important;
 }
 .regiester_form .input_field {
   display: flex;
@@ -943,8 +966,8 @@ footer .btnSubmit {
   content: "✓";
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 50%;
+  transform: translate(50%, -50%);
   color: #d77673;
   font-size: 12px;
   display: none;
@@ -970,7 +993,7 @@ footer .btnSubmit {
   background: #fff;
 }
 .faqs .container {
-  width: min(100% - 24px, 950px) !important;
+  width: min(100% - 8px, 950px) !important;
 }
 .faqs .container .title {
   font-size: 50px;
@@ -1003,11 +1026,6 @@ footer .btnSubmit {
   background: none !important;
 }
 
-.accordion-button::after {
-  margin-right: auto !important;
-  margin-left: initial;
-}
-
 .accordion-button:focus {
   outline: none !important;
   border: none !important;
@@ -1016,8 +1034,8 @@ footer .btnSubmit {
 
 .accordion-item {
   border-top: 0 !important;
-  border-right: 0 !important;
   border-left: 0 !important;
+  border-right: 0 !important;
   border-bottom: 1px solid #d7d7d7 !important;
   border-radius: 0 !important;
 }

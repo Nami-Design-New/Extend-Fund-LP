@@ -359,7 +359,7 @@ content {
     display: flex;
     align-items: center;
     gap: 24px;
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
     margin: auto;
     padding: 24px 0;
     justify-content: space-around;
@@ -591,7 +591,7 @@ content {
   padding: 80px 0;
   background-color: $whiteColor;
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
   }
   .title {
     font-size: 50px;
@@ -640,7 +640,12 @@ content {
       text-align: center;
       opacity: 0;
       visibility: hidden;
-      transition: .5s ease-in-out !important;
+      transition: .4s ease-in-out !important;
+      overflow: hidden;
+      font-size: 14px;
+      @media screen and (max-width: 768px) {
+        font-size: 13px;
+      }
     }
     &:hover {
       .details {
@@ -726,7 +731,7 @@ input:-moz-autofill {
   padding: 80px 0;
   background-image: url(../img/fieldsBG.jpg);
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
     margin: auto;
     .sectionTitle {
       font-size: 50px;
@@ -802,7 +807,7 @@ footer {
     }
   }
   .container {
-    width: min(100% - 24px, 950px);
+    width: min(100% - 8px, 950px);
   }
   .title {
     font-size: 50px;
@@ -831,7 +836,7 @@ footer {
   padding: 60px 0;
   background: #1a1d21;
   .container {
-    width: min(100% - 24px, 950px) !important;
+    width: min(100% - 8px, 950px) !important;
   }
   .input_field {
     display: flex;
@@ -915,7 +920,7 @@ footer {
   padding: 60px 0;
   background: #fff;
   .container {
-    width: min(100% - 24px, 950px) !important;
+    width: min(100% - 8px, 950px) !important;
     .title {
       font-size: 50px;
       font-family: "fontBold";

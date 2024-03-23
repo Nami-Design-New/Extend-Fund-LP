@@ -376,7 +376,7 @@ content {
   display: flex;
   align-items: center;
   gap: 24px;
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
   margin: auto;
   padding: 24px 0;
   justify-content: space-around;
@@ -632,7 +632,7 @@ content {
   background-color: #ffffff;
 }
 .sectors .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
 }
 .sectors .title {
   font-size: 50px;
@@ -687,7 +687,14 @@ content {
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: 0.5s ease-in-out !important;
+  transition: 0.4s ease-in-out !important;
+  overflow: hidden;
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .sectors .singleSector .details {
+    font-size: 13px;
+  }
 }
 .sectors .singleSector:hover .details {
   visibility: visible;
@@ -779,7 +786,7 @@ input:-moz-autofill {
   background-image: url(../img/fieldsBG.jpg);
 }
 .beneficiaryFields .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
   margin: auto;
 }
 .beneficiaryFields .container .sectionTitle {
@@ -864,7 +871,7 @@ footer .call span {
   }
 }
 footer .container {
-  width: min(100% - 24px, 950px);
+  width: min(100% - 8px, 950px);
 }
 footer .title {
   font-size: 50px;
@@ -896,7 +903,7 @@ footer .btnSubmit {
   background: #1a1d21;
 }
 .regiester_form .container {
-  width: min(100% - 24px, 950px) !important;
+  width: min(100% - 8px, 950px) !important;
 }
 .regiester_form .input_field {
   display: flex;
@@ -986,7 +993,7 @@ footer .btnSubmit {
   background: #fff;
 }
 .faqs .container {
-  width: min(100% - 24px, 950px) !important;
+  width: min(100% - 8px, 950px) !important;
 }
 .faqs .container .title {
   font-size: 50px;
