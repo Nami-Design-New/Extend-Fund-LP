@@ -623,6 +623,9 @@ content {
     .name {
       font-family: "fontBold";
       font-weight: bold;
+      transition: 0.3s ease-in-out !important;
+      opacity: 1;
+      visibility: visible;
     }
     .details {
       position: absolute;
@@ -648,6 +651,10 @@ content {
       }
     }
     &:hover {
+      .name {
+        opacity: 0;
+        visibility: hidden;
+      }
       .details {
         visibility: visible;
         opacity: 1;

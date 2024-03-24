@@ -623,6 +623,9 @@ content {
     .name {
       font-family: "fontBold";
       font-weight: bold;
+      transition: 0.3s ease-in-out !important;
+      opacity: 1;
+      visibility: visible;
     }
     .details {
       position: absolute;
@@ -631,7 +634,7 @@ content {
       width: 100%;
       height: 100%;
       z-index: 2;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(5px);
       padding: 24px;
       display: flex;
       justify-content: center;
@@ -640,7 +643,7 @@ content {
       text-align: center;
       opacity: 0;
       visibility: hidden;
-      transition: .4s ease-in-out !important;
+      transition: 0.4s ease-in-out !important;
       overflow: hidden;
       font-size: 14px;
       @media screen and (max-width: 768px) {
@@ -648,6 +651,10 @@ content {
       }
     }
     &:hover {
+      .name {
+        opacity: 0;
+        visibility: hidden;
+      }
       .details {
         visibility: visible;
         opacity: 1;

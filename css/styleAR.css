@@ -669,6 +669,9 @@ content {
 .sectors .singleSector .name {
   font-family: "fontBold";
   font-weight: bold;
+  transition: 0.3s ease-in-out !important;
+  opacity: 1;
+  visibility: visible;
 }
 .sectors .singleSector .details {
   position: absolute;
@@ -695,6 +698,10 @@ content {
   .sectors .singleSector .details {
     font-size: 13px;
   }
+}
+.sectors .singleSector:hover .name {
+  opacity: 0;
+  visibility: hidden;
 }
 .sectors .singleSector:hover .details {
   visibility: visible;
